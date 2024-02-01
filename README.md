@@ -1,12 +1,11 @@
-# BTI Platform Dashboard Webpage Template
+# BTI Platform Dashboard Webpage
 
 ## Description
 
-This is a template for the BTI Platform Dashboard Webpage.
+This is the dashboard webpage for the BTI Platform.
+
+Link: https://phillweston.github.io/BTI-Dashboard/
 
 ## Version
 
-Version 1.0
-
-- HTML Version
-- ReactJs Version
+HTML Version 1.0
