@@ -84,7 +84,7 @@
 	}
 }
 
-.walet-info-card {
+.wallet-info-card {
 	
 	.card-body {
 
@@ -97,7 +97,7 @@
 			font-weight: 700;
 		}
 
-		input.walet-address {
+		input.wallet-address {
 			    background-color: #fff;
 				border: 1px solid #e8e8e8;
 				font-size: 12px;
@@ -119,7 +119,7 @@
 		}
 	}
 
-	.walet-status li {
+	.wallet-status li {
 		&:not(:last-child) {
 			margin-bottom: 15px;
 		}
@@ -151,7 +151,7 @@
 	}
 }
 
-.walet-address-card {
+.wallet-address-card {
 
 	.card-body {
 
@@ -159,7 +159,7 @@
 			background-color: #F7F7F7;
 		}
 
-		input.walet-address {
+		input.wallet-address {
 			    background-color: #fff;
 				border: 1px solid #e8e8e8;
 				font-size: 14px;
@@ -181,7 +181,7 @@
 		}
 	}
 
-	.walet-direction {
+	.wallet-direction {
 		text-align: center;
 		border-top: 1px solid #E5E5E5;
 		// margin-top: 12px;
@@ -204,7 +204,7 @@
 	}
 }
 
-.walet-direction {
+.wallet-direction {
 
     a {
         font-weight: 700;

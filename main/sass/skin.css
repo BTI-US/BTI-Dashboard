@@ -193,11 +193,11 @@ body#modern .login-card .custom-control-input:checked ~ .custom-control-label::b
   background: #b0b0b0;
 }
 
-.walet-direction h4 a {
+.wallet-direction h4 a {
   color: #2c3645 !important;
 }
 
-.walet-direction h4 a:hover {
+.wallet-direction h4 a:hover {
   color: #707070 !important;
 }
 
