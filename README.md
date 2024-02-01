@@ -4,11 +4,11 @@
 
 This is the dashboard webpage for the BTI Platform.
 
-Link: https://phillweston.github.io/BTI-Dashboard/
+Link: https://dashboard.btiplatform.com/
 
 ## Documentation
 
-Click [here](https://phillweston.github.io/BTI-Dashboard/docs/) to view the documentation.
+Click [here](https://dashboard.btiplatform.com/docs/) to view the documentation.
 
 ## Version
 
