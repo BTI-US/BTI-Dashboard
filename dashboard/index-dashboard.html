@@ -325,7 +325,7 @@
                     <li class="profile">
                         <a href="#" data-toggle="dropdown" class="toggle">
                             <img src="../data/profile/profile.jpg" alt="user-image" class="img-circle img-inline">
-                            <span>Smith Wright <i class="fa fa-angle-down"></i></span>
+                            <span>Binance2 <i class="fa fa-angle-down"></i></span>
                         </a>
                         <ul class="dropdown-menu profile animated fadeIn">
                             <li>
@@ -823,8 +823,8 @@
                                             <img src="../data/icons/coin-dash.png" class='mt-10' alt="">
                                         </div>
                                         <div class="stats">
-                                            <h3 class="mb-5">5.19034 DASH</h3>
-                                            <span>Wallet DASH balance</span>
+                                            <h3 class="mb-5">115,225 BTI</h3>
+                                            <span>Wallet BTI balance</span>
                                         </div>
                                     </div>
                                 </div>
@@ -836,7 +836,7 @@
                                         </div>
                                         <div class="stats">
                                             <h3 class="mb-5">12.60349 LTC</h3>
-                                            <span>Unconfiremed balance</span>
+                                            <span>Unconfirmed balance</span>
                                         </div>
                                     </div>
                                 </div>
@@ -850,10 +850,10 @@
                 <div class="clearfix"></div>
                 <!-- MAIN CONTENT AREA STARTS -->
 
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <section class="box" style="overflow:hidden">
                         <header class="panel_header">
-                            <h2 class="title pull-left">Balance Statistic</h2>
+                            <h2 class="title pull-left">Live crypto prices</h2>
                             <div class="actions panel_actions pull-right">
                                 <a class="box_toggle fa fa-chevron-down"></a>
                                 <a class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></a>
@@ -871,11 +871,13 @@
                         </div>
                     </section>
                 </div>
+                
+                <div class="clearfix"></div>
 
                 <div class="col-lg-4">
                     <section class="box ">
                         <header class="panel_header">
-                            <h2 class="title pull-left">Live crypto prices</h2>
+                            <h2 class="title pull-left">Safe deals</h2>
                             <div class="actions panel_actions pull-right">
                                 <a class="box_toggle fa fa-chevron-down"></a>
                                 <a class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></a>
@@ -884,26 +886,126 @@
                         </header>
                         <div class="content-body">
                             <div class="row">
-                                <div class="col-xs-12 mt-5">
-                                    <script>
-                                        baseUrl = "https://widgets.cryptocompare.com/";
-                                        var scripts = document.getElementsByTagName("script");
-                                        var embedder = scripts[scripts.length - 1];
-                                        var cccTheme = {"General":{"background":"#121212","borderColor":"#000"},"Tabs":{"background":"#000","color":"#FFF","borderColor":"#333","activeBackground":"#333","activeColor":"#FFF"},"Row":{"color":"#FFF","borderColor":"#585858"},"Conversion":{"background":"#000","color":"#CCC"}};
-                                        (function() {
-                                            var appName = encodeURIComponent(window.location.hostname);
-                                            if (appName == "") {
-                                                appName = "local";
-                                            }
-                                            var s = document.createElement("script");
-                                            s.type = "text/javascript";
-                                            s.async = true;
-                                            var theUrl = baseUrl + 'serve/v1/coin/multi?fsyms=BTC,ETH,XMR,LTC,XRP,NEO,DASH&tsyms=USD,EUR,CNY,GBP';
-                                            s.src = theUrl + (theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
-                                            embedder.parentNode.appendChild(s);
-                                        })();
-                                    </script>
-                                    
+                                <div class="col-xs-12">
+                                    <div id="morris_donut_graph"></div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="statistics-wraper">
+                                        <div class="statistics-info">
+                                            <h3 class="mb"> 5.6307173 BTC</h3>
+                                            <span><i class="fa fa-dot-circle-o active"></i> 6 active deals</span>
+                                        </div>
+                                        <div class="statistics-info no-pb">
+                                            <h3 class="mb"> 16.453671 BTC</h3>
+                                            <span><i class="fa fa-dot-circle-o"></i> 20 unconfirmed deals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="col-lg-8">
+                    <section class="box" style="border-left: 3px solid #3695eb;">
+                        <header class="panel_header">
+                            <h2 class="title pull-left">Contract orders</h2>
+                            <div class="actions panel_actions pull-right">
+                                <a class="box_toggle fa fa-chevron-down"></a>
+                                <a class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></a>
+                                <a class="box_close fa fa-times"></a>
+                            </div>
+                        </header>
+                        <div class="content-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+
+                                    <div class="table-responsive" data-pattern="priority-columns">
+                                        <table id="tech-companies-1" class="table table-small-font no-mb table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Trade Time</th>
+                                                    <th data-priority="1">Crypto ID</th>
+                                                    <th data-priority="3">Status</th>
+                                                    <th data-priority="1">Risk</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 126515</th>
+                                                    <td>17.24AM</td>
+                                                    <td><span class="status-complete">complete</span></td>
+                                                    <td><i class="fa fa-plus complete normal"></i>0.00113 BTC</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 123675</th>
+                                                    <td>18.14AM</td>
+                                                    <td><span class="status-pending">pending</span></td>
+                                                    <td><i class="fa fa-plus complete normal f-s-10"></i>3.90244 LTC</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 126515</th>
+                                                    <td>20.25AM</td>
+                                                    <td><span class="status-pending">pending</span></td>
+                                                    <td><i class="fa fa-minus cancelled normal f-s-10"></i>0.00121 LTC</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 159034</th>
+                                                    <td>21.24AM</td>
+                                                    <td><span class="status-cancelled">cancelled</span></td>
+                                                    <td><i class="fa fa-plus complete normal f-s-10"></i>0.01231 BTC</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 136563</th>
+                                                    <td>21.50AM</td>
+                                                    <td><span class="status-complete">complete</span></td>
+                                                    <td><i class="fa fa-minus cancelled normal f-s-10"></i>0.6673 DASH</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 177384</th>
+                                                    <td>21.59PM</td>
+                                                    <td><span class="status-complete">complete</span></td>
+                                                    <td><i class="fa fa-minus cancelled normal f-s-10"></i>0.97231 BTC</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 173434</th>
+                                                    <td>22.11PM</td>
+                                                    <td><span class="status-cancelled">cancelled</span></td>
+                                                    <td><i class="fa fa-plus complete normal f-s-10"></i>9.2323 LTC</td>
+                                                </tr>
+                                                <!-- Repeat -->
+                                                <tr>
+                                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 1788348</th>
+                                                    <td>22.34PM</td>
+                                                    <td><span class="status-pending">pending</span></td>
+                                                    <td><i class="fa fa-minus cancelled normal f-s-10"></i>1.3433 DASH</td>
+                                                    <tr>
+                                                        <th><i class="fa fa-dot-circle-o complete"></i> Deal number 189915</th>
+                                                        <td>22.54PM</td>
+                                                        <td><span class="status-complete">complete</span></td>
+                                                        <td><i class="fa fa-plus complete normal"></i>12.343 LTC</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><i class="fa fa-dot-circle-o complete"></i> Deal number 179993</th>
+                                                        <td>23.05PM</td>
+                                                        <td><span class="status-complete">complete</span></td>
+                                                        <td><i class="fa fa-plus complete normal f-s-10"></i>0.23234 LTC</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 184563</th>
+                                                        <td>23.15PM</td>
+                                                        <td><span class="status-cancelled">cancelled</span></td>
+                                                        <td><i class="fa fa-minus cancelled normal f-s-10"></i>1.4231 BTC</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><i class="fa fa-dot-circle-o pending"></i> Deal number 186564</th>
+                                                        <td>23.50PM</td>
+                                                        <td><span class="status-pending">pending</span></td>
+                                                        <td><i class="fa fa-plus complete normal f-s-10"></i>2.3430 DASH</td>
+                                                    </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
 
                                 </div>
                             </div>
@@ -1061,147 +1163,6 @@
                                         </div>
 
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-lg-4">
-                    <section class="box ">
-                        <header class="panel_header">
-                            <h2 class="title pull-left">Safe deals</h2>
-                            <div class="actions panel_actions pull-right">
-                                <a class="box_toggle fa fa-chevron-down"></a>
-                                <a class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></a>
-                                <a class="box_close fa fa-times"></a>
-                            </div>
-                        </header>
-                        <div class="content-body">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div id="morris_donut_graph"></div>
-                                </div>
-                                <div class="col-xs-12">
-                                    <div class="statistics-wraper">
-                                        <div class="statistics-info">
-                                            <h3 class="mb"> 5.6307173 BTC</h3>
-                                            <span><i class="fa fa-dot-circle-o active"></i> 6 active deals</span>
-                                        </div>
-                                        <div class="statistics-info no-pb">
-                                            <h3 class="mb"> 16.453671 BTC</h3>
-                                            <span><i class="fa fa-dot-circle-o"></i> 20 unconfirmed deals</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div class="col-lg-8">
-                    <section class="box" style="border-left: 3px solid #3695eb;">
-                        <header class="panel_header">
-                            <h2 class="title pull-left">Recent trading activities</h2>
-                            <div class="actions panel_actions pull-right">
-                                <a class="box_toggle fa fa-chevron-down"></a>
-                                <a class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></a>
-                                <a class="box_close fa fa-times"></a>
-                            </div>
-                        </header>
-                        <div class="content-body">
-                            <div class="row">
-                                <div class="col-xs-12">
-
-                                    <div class="table-responsive" data-pattern="priority-columns">
-                                        <table id="tech-companies-1" class="table table-small-font no-mb table-bordered table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>Deal ID Number</th>
-                                                    <th data-priority="1">Trade Time</th>
-                                                    <th data-priority="3">Status</th>
-                                                    <th data-priority="1">Last Trade</th>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 126515</th>
-                                                    <td>17.24AM</td>
-                                                    <td><span class="status-complete">complete</span></td>
-                                                    <td><i class="fa fa-plus complete normal"></i>0.00113 BTC</td>
-                                                </tr>
-                                                <tr>
-                                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 123675</th>
-                                                    <td>18.14AM</td>
-                                                    <td><span class="status-pending">pending</span></td>
-                                                    <td><i class="fa fa-plus complete normal f-s-10"></i>3.90244 LTC</td>
-                                                </tr>
-                                                <tr>
-                                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 126515</th>
-                                                    <td>20.25AM</td>
-                                                    <td><span class="status-pending">pending</span></td>
-                                                    <td><i class="fa fa-minus cancelled normal f-s-10"></i>0.00121 LTC</td>
-                                                </tr>
-                                                <tr>
-                                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 159034</th>
-                                                    <td>21.24AM</td>
-                                                    <td><span class="status-cancelled">cancelled</span></td>
-                                                    <td><i class="fa fa-plus complete normal f-s-10"></i>0.01231 BTC</td>
-                                                </tr>
-                                                <tr>
-                                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 136563</th>
-                                                    <td>21.50AM</td>
-                                                    <td><span class="status-complete">complete</span></td>
-                                                    <td><i class="fa fa-minus cancelled normal f-s-10"></i>0.6673 DASH</td>
-                                                </tr>
-                                                <tr>
-                                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 177384</th>
-                                                    <td>21.59PM</td>
-                                                    <td><span class="status-complete">complete</span></td>
-                                                    <td><i class="fa fa-minus cancelled normal f-s-10"></i>0.97231 BTC</td>
-                                                </tr>
-                                                <tr>
-                                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 173434</th>
-                                                    <td>22.11PM</td>
-                                                    <td><span class="status-cancelled">cancelled</span></td>
-                                                    <td><i class="fa fa-plus complete normal f-s-10"></i>9.2323 LTC</td>
-                                                </tr>
-                                                <!-- Repeat -->
-                                                <tr>
-                                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 1788348</th>
-                                                    <td>22.34PM</td>
-                                                    <td><span class="status-pending">pending</span></td>
-                                                    <td><i class="fa fa-minus cancelled normal f-s-10"></i>1.3433 DASH</td>
-                                                    <tr>
-                                                        <th><i class="fa fa-dot-circle-o complete"></i> Deal number 189915</th>
-                                                        <td>22.54PM</td>
-                                                        <td><span class="status-complete">complete</span></td>
-                                                        <td><i class="fa fa-plus complete normal"></i>12.343 LTC</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th><i class="fa fa-dot-circle-o complete"></i> Deal number 179993</th>
-                                                        <td>23.05PM</td>
-                                                        <td><span class="status-complete">complete</span></td>
-                                                        <td><i class="fa fa-plus complete normal f-s-10"></i>0.23234 LTC</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 184563</th>
-                                                        <td>23.15PM</td>
-                                                        <td><span class="status-cancelled">cancelled</span></td>
-                                                        <td><i class="fa fa-minus cancelled normal f-s-10"></i>1.4231 BTC</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th><i class="fa fa-dot-circle-o pending"></i> Deal number 186564</th>
-                                                        <td>23.50PM</td>
-                                                        <td><span class="status-pending">pending</span></td>
-                                                        <td><i class="fa fa-plus complete normal f-s-10"></i>2.3430 DASH</td>
-                                                    </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
