@@ -877,7 +877,7 @@
                 <div class="col-lg-4">
                     <section class="box ">
                         <header class="panel_header">
-                            <h2 class="title pull-left">Safe deals</h2>
+                            <h2 class="title pull-left">Safe audits</h2>
                             <div class="actions panel_actions pull-right">
                                 <a class="box_toggle fa fa-chevron-down"></a>
                                 <a class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></a>
@@ -892,12 +892,14 @@
                                 <div class="col-xs-12">
                                     <div class="statistics-wraper">
                                         <div class="statistics-info">
-                                            <h3 class="mb"> 5.6307173 BTC</h3>
-                                            <span><i class="fa fa-dot-circle-o active"></i> 6 active deals</span>
+                                            <h3 style="color: red;" class="mb">RISK: HIGH</h3>
+                                            <span><i class="fa fa-dot-circle-o active"></i> 6 active risks</span>
                                         </div>
                                         <div class="statistics-info no-pb">
-                                            <h3 class="mb"> 16.453671 BTC</h3>
-                                            <span><i class="fa fa-dot-circle-o"></i> 20 unconfirmed deals</span>
+                                            <div style="display: flex; justify-content: center; align-items: center;">
+                                                <button class="btn btn-secondary" style="margin-right: 10px;">Insure</button>
+                                                <button class="btn btn-secondary">Cancel</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -925,244 +927,88 @@
                                             <thead>
                                                 <tr>
                                                     <th>Trade Time</th>
-                                                    <th data-priority="1">Crypto ID</th>
+                                                    <th data-priority="1">Cryptocurrency</th>
                                                     <th data-priority="3">Status</th>
                                                     <th data-priority="1">Risk</th>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 126515</th>
-                                                    <td>17.24AM</td>
-                                                    <td><span class="status-complete">complete</span></td>
-                                                    <td><i class="fa fa-plus complete normal"></i>0.00113 BTC</td>
+                                                <tr class="data-row">
+                                                    <th><i class="fa fa-dot-circle-o complete"></i> Jan 27, 2024, 05:59 AM</th>
+                                                    <td>Ethereum</td>
+                                                    <td><span class="status-complete">proceeding</span></td>
+                                                    <td>27%</td>
+                                                </tr>
+                                                <tr class="data-row">
+                                                    <th><i class="fa fa-dot-circle-o complete"></i> Jan 27, 2024, 06:23 AM</th>
+                                                    <td>Bitcoin</td>
+                                                    <td><span class="status-complete">proceeding</span></td>
+                                                    <td>68%</td>
+                                                </tr>
+                                                <tr class="data-row">
+                                                    <th><i class="fa fa-dot-circle-o complete"></i> Jan 29, 2024, 11:32 AM</th>
+                                                    <td>Solana</td>
+                                                    <td><span class="status-complete">proceeding</span></td>
+                                                    <td>15%</td>
+                                                </tr>
+                                                <tr class="data-row">
+                                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Jan 28, 2024, 18:52 PM</th>
+                                                    <td>Dogecoin</td>
+                                                    <td><span class="status-cancelled">Insure</span></td>
+                                                    <td>79%</td>
+                                                </tr>
+                                                <tr class="data-row">
+                                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Jan 29, 2024, 03:25 AM</th>
+                                                    <td>Litecoin</td>
+                                                    <td><span class="status-cancelled">Insure</span></td>
+                                                    <td>46%</td>
+                                                </tr>
+                                                <tr class="data-row">
+                                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Jan 29, 2024, 08:13 AM</th>
+                                                    <td>Bitcoin</td>
+                                                    <td><span class="status-cancelled">Insure</span></td>
+                                                    <td>57%</td>
                                                 </tr>
                                                 <tr>
-                                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 123675</th>
-                                                    <td>18.14AM</td>
-                                                    <td><span class="status-pending">pending</span></td>
-                                                    <td><i class="fa fa-plus complete normal f-s-10"></i>3.90244 LTC</td>
-                                                </tr>
-                                                <tr>
-                                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 126515</th>
-                                                    <td>20.25AM</td>
-                                                    <td><span class="status-pending">pending</span></td>
-                                                    <td><i class="fa fa-minus cancelled normal f-s-10"></i>0.00121 LTC</td>
-                                                </tr>
-                                                <tr>
-                                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 159034</th>
-                                                    <td>21.24AM</td>
-                                                    <td><span class="status-cancelled">cancelled</span></td>
-                                                    <td><i class="fa fa-plus complete normal f-s-10"></i>0.01231 BTC</td>
-                                                </tr>
-                                                <tr>
-                                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 136563</th>
-                                                    <td>21.50AM</td>
-                                                    <td><span class="status-complete">complete</span></td>
-                                                    <td><i class="fa fa-minus cancelled normal f-s-10"></i>0.6673 DASH</td>
-                                                </tr>
-                                                <tr>
-                                                    <th><i class="fa fa-dot-circle-o complete"></i> Deal number 177384</th>
-                                                    <td>21.59PM</td>
-                                                    <td><span class="status-complete">complete</span></td>
-                                                    <td><i class="fa fa-minus cancelled normal f-s-10"></i>0.97231 BTC</td>
-                                                </tr>
-                                                <tr>
-                                                    <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 173434</th>
-                                                    <td>22.11PM</td>
-                                                    <td><span class="status-cancelled">cancelled</span></td>
-                                                    <td><i class="fa fa-plus complete normal f-s-10"></i>9.2323 LTC</td>
+                                                    <th><i class="fa fa-dot-circle-o pending"></i> Jan 24, 2024, 10:22 AM</th>
+                                                    <td>Bitcoin</td>
+                                                    <td><span class="status-pending">complete</span></td>
+                                                    <td>-</td>
                                                 </tr>
                                                 <!-- Repeat -->
                                                 <tr>
-                                                    <th><i class="fa fa-dot-circle-o pending"></i> Deal number 1788348</th>
-                                                    <td>22.34PM</td>
-                                                    <td><span class="status-pending">pending</span></td>
-                                                    <td><i class="fa fa-minus cancelled normal f-s-10"></i>1.3433 DASH</td>
+                                                    <th><i class="fa fa-dot-circle-o pending"></i> Jan 24, 2024, 11:23 AM</th>
+                                                    <td>Bitcoin</td>
+                                                    <td><span class="status-pending">complete</span></td>
+                                                    <td>-</td>
                                                     <tr>
-                                                        <th><i class="fa fa-dot-circle-o complete"></i> Deal number 189915</th>
-                                                        <td>22.54PM</td>
-                                                        <td><span class="status-complete">complete</span></td>
-                                                        <td><i class="fa fa-plus complete normal"></i>12.343 LTC</td>
+                                                        <th><i class="fa fa-dot-circle-o pending"></i> Jan 26, 2024, 16:32 PM</th>
+                                                        <td>ChainLink</td>
+                                                        <td><span class="status-pending">complete</span></td>
+                                                        <td>-</td>
                                                     </tr>
                                                     <tr>
-                                                        <th><i class="fa fa-dot-circle-o complete"></i> Deal number 179993</th>
-                                                        <td>23.05PM</td>
-                                                        <td><span class="status-complete">complete</span></td>
-                                                        <td><i class="fa fa-plus complete normal f-s-10"></i>0.23234 LTC</td>
+                                                        <th><i class="fa fa-dot-circle-o pending"></i> Jan 27, 2024, 15:32 PM</th>
+                                                        <td>Ethereum</td>
+                                                        <td><span class="status-pending">complete</span></td>
+                                                        <td>-</td>
                                                     </tr>
                                                     <tr>
-                                                        <th><i class="fa fa-dot-circle-o cancelled"></i> Deal number 184563</th>
-                                                        <td>23.15PM</td>
-                                                        <td><span class="status-cancelled">cancelled</span></td>
-                                                        <td><i class="fa fa-minus cancelled normal f-s-10"></i>1.4231 BTC</td>
+                                                        <th><i class="fa fa-dot-circle-o pending"></i> Jan 28, 2024, 06:28 AM</th>
+                                                        <td>Optimism</td>
+                                                        <td><span class="status-pending">complete</span></td>
+                                                        <td>-</td>
                                                     </tr>
                                                     <tr>
-                                                        <th><i class="fa fa-dot-circle-o pending"></i> Deal number 186564</th>
-                                                        <td>23.50PM</td>
-                                                        <td><span class="status-pending">pending</span></td>
-                                                        <td><i class="fa fa-plus complete normal f-s-10"></i>2.3430 DASH</td>
+                                                        <th><i class="fa fa-dot-circle-o pending"></i> Jan 28, 2024, 17:45 PM</th>
+                                                        <td>Solana</td>
+                                                        <td><span class="status-pending">complete</span></td>
+                                                        <td>-</td>
                                                     </tr>
 
                                             </tbody>
                                         </table>
                                     </div>
 
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-lg-4">
-                    <section class="box has-border-left-3">
-                        <header class="panel_header">
-                            <h2 class="title pull-left">Transfer Coins</h2>
-                            <div class="actions panel_actions pull-right">
-                                <a class="box_toggle fa fa-chevron-down"></a>
-                                <a class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></a>
-                                <a class="box_close fa fa-times"></a>
-                            </div>
-                        </header>
-                        <div class="content-body">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="transfer-wraper">
-                                        <div class="form-group no-mb">
-                                            <label class="form-label">Amount</label>
-                                            <span class="desc">minimum value "0.001 BTC"</span>
-
-                                            <div class="input-group mb-10">
-                                                <span class="input-group-addon">$</span>
-                                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="enter amount">
-                                                <div class="input-group-btn">
-                                                    <button type="button" class="btn btn-red dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                                                            BTC <span class="caret"></span>
-                                                    </button>
-
-                                                    <ul class="dropdown-menu dropdown-red no-spacing">
-                                                        <li><a href="#">LTC</a></li>
-                                                        <li><a href="#">DASH</a></li>
-                                                        <li><a href="#">Ripple</a></li>
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-
-                                            <label class="form-label">wallet address</label>
-                                            <span class="desc"></span>
-
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                        <span class="arrow"></span>
-                                                <img src="../data/icons/wallet-o.png" alt="icon">
-                                                </span>
-                                                <input type="text" class="form-control" placeholder="OxsD12F32xvW3deG5...">
-                                            </div>
-
-                                            <button type="button" class="btn btn-primary btn-lg mt-20 has-gradient-to-right-bottom" style="width:100%"> Transfer Now</button>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div class="col-lg-4">
-                    <section class="box has-border-left-3">
-                        <header class="panel_header">
-                            <h2 class="title pull-left">Recent Transaction</h2>
-                            <div class="actions panel_actions pull-right">
-                                <a class="box_toggle fa fa-chevron-down"></a>
-                                <a class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></a>
-                                <a class="box_close fa fa-times"></a>
-                            </div>
-                        </header>
-                        <div class="content-body">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="transaction-wraper">
-                                        <div class="transaction-info has-gradient-to-right-bottom">
-                                            <img alt="" src="../data/profile/profile.jpg" class="img-responsive img-circle">
-                                            <strong class="color-white">1.23<span> LTC</span></strong>
-                                        </div>
-                                        <span class="transaction-opration"><i class="fa fa-arrow-right cancelled"></i></span>
-                                        <div class="transaction-info">
-                                            <img alt="" src="../data/profile/profile-blog.jpg" class="img-responsive img-circle">
-                                            <strong><span>OxsD1..</span></strong>
-                                        </div>
-
-                                        <hr>
-
-                                        <div class="transaction-info bg-gray">
-                                            <img alt="" src="../data/profile/profile.jpg" class="img-responsive img-circle">
-                                            <strong>0.03<span> BTC</span></strong>
-                                        </div>
-                                        <span class="transaction-opration"><i class="fa fa-arrow-left complete"></i></span>
-                                        <div class="transaction-info">
-                                            <img alt="" src="../data/profile/profile-crm.jpg" class="img-responsive img-circle">
-                                            <strong><span>OxsD1..</span></strong>
-                                        </div>
-
-                                        <hr>
-
-                                        <div class="col-xs-12">
-                                            <a href="#" class="all-transaction text-center block"><strong><i class="fa fa-plus"></i> View all</strong></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div class="col-lg-4">
-                    <section class="box has-border-left-3">
-                        <header class="panel_header">
-                            <h2 class="title pull-left">Wallet addresses</h2>
-                            <div class="actions panel_actions pull-right">
-                                <a class="box_toggle fa fa-chevron-down"></a>
-                                <a class="box_setting fa fa-cog" data-toggle="modal" href="#section-settings"></a>
-                                <a class="box_close fa fa-times"></a>
-                            </div>
-                        </header>
-                        <div class="content-body">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="transfer-wraper">
-                                        <div class="form-group no-mb">
-
-                                            <label class="form-label">Bitcoin wallet address</label>
-                                            <div class="input-group mb-10">
-                                                <span class="input-group-addon has-gradient-to-right-bottom">
-                                                        <i class='cc BTC-alt icon-white'></i>   
-                                                    </span>
-                                                <p class="form-control-static with-border">OxsD12F32xvW3deG5...</p>
-                                                <a href="#" class="input-group-addon" data-color-class="primary" data-animate=" animated fadeIn" data-toggle="tooltip" data-original-title="copy" data-placement="top"><i class="fa fa-copy text-dark"></i></a>
-                                            </div>
-
-                                            <label class="form-label">Litecoin wallet address</label>
-                                            <div class="input-group">
-                                                <span class="input-group-addon has-gradient-to-right-bottom">
-                                                        <i class='cc LTC-alt icon-white'></i>   
-                                                    </span>
-                                                <p class="form-control-static with-border">OxsD12F32xvW3deG5...</p>
-                                                <a href="#" class="input-group-addon" data-color-class="primary" data-animate=" animated fadeIn" data-toggle="tooltip" data-original-title="copy" data-placement="top"><i class="fa fa-copy text-dark"></i></a>
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <a href="my-wallet.html" class="btn btn-primary btn-lg mt-20 has-gradient-to-right-bottom" style="width:100%">View all</a>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <a href="account-confirmation.html" class="btn btn-primary btn-lg mt-20 has-gradient-to-right-bottom" style="width:100%">Settings</a>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1371,7 +1217,7 @@
 
     <script src="../assets/plugins/morris-chart/js/raphael-min.js"></script>
     <script src="../assets/plugins/morris-chart/js/morris.min.js"></script>
-    <script src="../assets/js/chart-morris.js"></script>
+    <script src="../assets/js/chart-morris-dashboard.js"></script>
     <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
 
     <!-- CORE TEMPLATE JS - START -->
