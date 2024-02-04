@@ -897,9 +897,41 @@
                                         </div>
                                         <div class="statistics-info no-pb">
                                             <div style="display: flex; justify-content: center; align-items: center;">
-                                                <button class="btn btn-secondary" style="margin-right: 10px;">Insure</button>
-                                                <button class="btn btn-secondary">Cancel</button>
+                                                <a class="btn btn-success btn-block" data-toggle="modal" href="#cmpltadminModal-1">Insure</a>
                                             </div>
+                                            
+                                            <!-- modal start -->
+                                            <div class="modal fade col-xs-12" id="cmpltadminModal-1" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                            <h2 class="modal-title" style="color: grey;">User Notice and Disclaimer</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Dear BTI platform user,</p>
+                                                            <p>Thank you for choosing the insurance service of BTI platform. Before deciding to insure your trading order, please carefully read the following disclaimer:</p>
+                                                            <strong>Risk Assumption:</strong>
+                                                            <p>Please understand that while insurance can provide a certain level of risk protection for your trades, it does not imply the elimination of all risks. Investing in virtual currency trading carries inherent risks such as market volatility, technical failures, and changes in legal regulations. The insurance service of BTI platform is designed to mitigate financial losses caused by specific risks but does not guarantee the safety of the invested capital or expected returns.</p>
+                                                            <strong>Insurance Terms:</strong>
+                                                            <p>Users should carefully read and understand all details of the insurance terms before applying for insurance, including but not limited to coverage scope, claim conditions, insurance rates, and the claim process.</p>
+                                                            <strong>Claim Conditions:</strong>
+                                                            <p>Insurance claims will only be triggered if the order meets the explicit claim conditions stated in the insurance contract. BTI platform will handle each claim application fairly and transparently according to the insurance terms.</p>
+                                                            <strong>Technical Issues:</strong>
+                                                            <p>BTI platform will make every effort to ensure the stable operation of the system and data security but will not be responsible for service interruptions or data loss caused by technical issues.</p>
+                                                            <strong>Legal Compliance:</strong>
+                                                            <p>All operations of the BTI platform follow applicable laws and regulations. Users are responsible for ensuring that their trading activities comply with the legal requirements of their country or region of residence.</p>
+                                                            <p>By using the insurance service of the BTI platform, you acknowledge that you have read, understood, and agreed to all terms of this disclaimer. We look forward to providing you with high-quality services and hope to promote the healthy development of the virtual currency trading market together.</p>
+                                                            <p>Please note that the final interpretation right of this disclaimer belongs to the BTI platform.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button data-dismiss="modal" class="btn btn-default" type="button">Decline</button>
+                                                            <button class="btn btn-success" type="button">Accept</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- modal end -->
                                         </div>
                                     </div>
                                 </div>
@@ -968,45 +1000,72 @@
                                                     <td><span class="status-cancelled">Insure</span></td>
                                                     <td>57%</td>
                                                 </tr>
-                                                <tr>
+                                                <tr class="data-row">
                                                     <th><i class="fa fa-dot-circle-o pending"></i> Jan 24, 2024, 10:22 AM</th>
                                                     <td>Bitcoin</td>
                                                     <td><span class="status-pending">complete</span></td>
                                                     <td>-</td>
                                                 </tr>
                                                 <!-- Repeat -->
-                                                <tr>
+                                                <tr class="data-row">
                                                     <th><i class="fa fa-dot-circle-o pending"></i> Jan 24, 2024, 11:23 AM</th>
                                                     <td>Bitcoin</td>
                                                     <td><span class="status-pending">complete</span></td>
                                                     <td>-</td>
-                                                    <tr>
-                                                        <th><i class="fa fa-dot-circle-o pending"></i> Jan 26, 2024, 16:32 PM</th>
-                                                        <td>ChainLink</td>
-                                                        <td><span class="status-pending">complete</span></td>
-                                                        <td>-</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th><i class="fa fa-dot-circle-o pending"></i> Jan 27, 2024, 15:32 PM</th>
-                                                        <td>Ethereum</td>
-                                                        <td><span class="status-pending">complete</span></td>
-                                                        <td>-</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th><i class="fa fa-dot-circle-o pending"></i> Jan 28, 2024, 06:28 AM</th>
-                                                        <td>Optimism</td>
-                                                        <td><span class="status-pending">complete</span></td>
-                                                        <td>-</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th><i class="fa fa-dot-circle-o pending"></i> Jan 28, 2024, 17:45 PM</th>
-                                                        <td>Solana</td>
-                                                        <td><span class="status-pending">complete</span></td>
-                                                        <td>-</td>
-                                                    </tr>
+                                                </tr>
+                                                <tr class="data-row">
+                                                    <th><i class="fa fa-dot-circle-o pending"></i> Jan 26, 2024, 16:32 PM</th>
+                                                    <td>ChainLink</td>
+                                                    <td><span class="status-pending">complete</span></td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr class="data-row">
+                                                    <th><i class="fa fa-dot-circle-o pending"></i> Jan 27, 2024, 15:32 PM</th>
+                                                    <td>Ethereum</td>
+                                                    <td><span class="status-pending">complete</span></td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr class="data-row">
+                                                    <th><i class="fa fa-dot-circle-o pending"></i> Jan 28, 2024, 06:28 AM</th>
+                                                    <td>Optimism</td>
+                                                    <td><span class="status-pending">complete</span></td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr class="data-row">
+                                                    <th><i class="fa fa-dot-circle-o pending"></i> Jan 28, 2024, 17:45 PM</th>
+                                                    <td>Solana</td>
+                                                    <td><span class="status-pending">complete</span></td>
+                                                    <td>-</td>
+                                                </tr>
 
                                             </tbody>
                                         </table>
+
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function() {
+                                                var rows = document.querySelectorAll('#tech-companies-1 .data-row');
+
+                                                rows.forEach(function(row) {
+                                                    row.addEventListener('click', function() {
+                                                        // Remove the highlight from all rows
+                                                        rows.forEach(r => r.classList.remove('highlighted'));
+
+                                                        // Add the highlight to the clicked row
+                                                        this.classList.add('highlighted');
+                                                    });
+                                                });
+
+                                                // Add click event listener to the document
+                                                document.addEventListener('click', function(event) {
+                                                    // Check if the clicked element is not a descendant of a 'data-row'
+                                                    if (!event.target.closest('.data-row')) {
+                                                        // Remove the highlight from all rows
+                                                        rows.forEach(r => r.classList.remove('highlighted'));
+                                                    }
+                                                });
+                                            });
+                                        </script>
+
                                     </div>
 
                                 </div>

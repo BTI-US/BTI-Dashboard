@@ -14,8 +14,8 @@ jQuery(function($) {
     // Initialize the Morris Donut chart once (outside of the function)
     var donutInitialized = false;
     var donutData = [
-        { value: 0, label: 'Dogecoin' },
-        { value: 100, label: 'Others' }
+        { value: 0, label: '' },
+        { value: 100, label: '' }
     ];
 
     if (!donutInitialized) {
@@ -29,79 +29,74 @@ jQuery(function($) {
             colors: [
                 "40-#ff9999-#ff3333:70-#ff3333-#cc0000",
                 '#f7f7f7'
-            ]
+            ],
+            formatter: function (value, data) {
+                // Show the label and percentage for the 'Percentage' part
+                if (data.label.includes("Percentage")) {
+                    return value + '%';
+                }
+                return value + '%';
+            }
         });
         donutInitialized = true;
     }
 
-    // Function to update the data with animation
-    CRYPTONIA_SETTINGS.chartMorris = function(percentage) {
+    // Function to update the data with animation, adding coin type
+    CRYPTONIA_SETTINGS.chartMorris = function(percentage, coinType) {
+        coinType = coinType || 'Unknown'; // Default coin type if not provided
         if ($("#morris_donut_graph").length) {
-            if (percentage === 100) {
-                // If the desired percentage is 100%, set the final data without animation
-                donutData[0].value = percentage;
-                donutData[1].value = 0;
-                donut.setData(donutData
-                     );
-            } else {
-                var startValue = donutData[0].value;
-                var endValue = percentage;
+            var startValue = donutData[0].value;
+            var endValue = percentage === '-' ? 0 : parseInt(percentage, 10); // Show 0% if percentage is '-'
 
-                function animateDonut(timestamp) {
-                    if (!animateDonut.startTime) {
-                        animateDonut.startTime = timestamp;
-                    }
-
-                    var progress = (timestamp - animateDonut.startTime) / 500; // Animation duration (in seconds)
-
-                    if (progress < 1) {
-                        var newValue = Math.round(startValue + (endValue - startValue) * progress);
-                        donut.setData([
-                            { value: newValue, label: 'Dogecoin' },
-                            { value: 100 - newValue, label: 'Dogecoin' }
-                        ]);
-                        requestAnimationFrame(animateDonut);
-                    } else {
-                        // Set the final data and keep it fixed at the desired percentage
-                        donutData[0].value = endValue;
-                        donutData[1].value = 100 - endValue;
-                        donut.setData(donutData);
-                    }
+            function animateDonut(timestamp) {
+                if (!animateDonut.startTime) {
+                    animateDonut.startTime = timestamp;
                 }
 
-                requestAnimationFrame(animateDonut);
+                var progress = (timestamp - animateDonut.startTime) / 500; // Animation duration (in seconds)
+
+                if (progress < 1) {
+                    var newValue = Math.round(startValue + (endValue - startValue) * progress);
+                    donut.setData([
+                        { value: newValue, label: coinType },
+                        { value: 100 - newValue, label: coinType }
+                    ]);
+                    requestAnimationFrame(animateDonut);
+                } else {
+                    // Set the final data and keep it fixed at the desired percentage
+                    donutData[0].value = endValue;
+                    donutData[1].value = 100 - endValue;
+                    donut.setData([
+                        { value: endValue, label: coinType },
+                        { value: 100 - endValue, label: coinType }
+                    ]);
+                    animateDonut.startTime = null; // Reset the animation timer
+                }
             }
+
+            requestAnimationFrame(animateDonut);
         }
     };
 
-
-    // Additional code for the mouseover event
-    $('.data-row').on('mouseover', function() {
+    // Revised code for the click event to include coin type
+    $('.data-row').on('click', function() {
+        var coinType = $(this).find('td:nth-child(2)').text(); // Get the coin type
         var percentageText = $(this).find('td:last-child').text();
-        var percentage = parseInt(percentageText, 10);
-        CRYPTONIA_SETTINGS.chartMorris(percentage);
-    });
-
-    // Reset the chart when the mouse leaves the row
-    $('.data-row').on('mouseleave', function() {
-        CRYPTONIA_SETTINGS.chartMorris(0); // Reset to 0%
+        var percentage = percentageText === '-' ? 0 : parseInt(percentageText, 10); // Convert '-' to 0
+        CRYPTONIA_SETTINGS.chartMorris(percentage, coinType);
     });
 
     /******************************
      initialize respective scripts 
      *****************************/
     $(document).ready(function() {
-        // Specify the initial percentage value
         var initialPercentage = 0; // Change this value to your desired initial percentage
         CRYPTONIA_SETTINGS.chartMorris(initialPercentage);
     });
 
     $(window).resize(function() {
-        // Handle window resize events if needed
+        if (donut) {
+            donut.redraw();
+        }
     });
-
-    $(window).load(function() {
-        // Handle window load events if needed
-    });
-
 });

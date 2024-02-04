@@ -9129,3 +9129,8 @@ table.dataTable.display tbody tr:first-child td {
 .table-striped>tbody>tr:nth-of-type(odd) {
     background-color: #24262d;
 }
+
+.table-striped > tbody > tr.highlighted > td,
+.table-striped > tbody > tr.highlighted > th {
+    background-color: yellow; /* your highlight color */
+}
