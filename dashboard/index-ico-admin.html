@@ -40,7 +40,9 @@
     <link href="../assets/plugins/morris-chart/css/morris.css" rel="stylesheet" type="text/css" media="screen"/>
 
     <!-- HEADER SCRIPTS INCLUDED ON THIS PAGE - END -->
-
+    <link href="../assets/plugins/messenger/css/messenger.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/messenger/css/messenger-theme-future.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../assets/plugins/messenger/css/messenger-theme-flat.css" rel="stylesheet" type="text/css" media="screen" />
 
     <!-- CORE CSS TEMPLATE - START -->
     <link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
@@ -868,7 +870,7 @@
                                     </div>
 
                                     <div class="trader-buy silver">
-                                        <h6 class="angle-round">Price volatility of Litecoin has risen sharply, indicating potential market instability and risk.<span class="number">Price Volatility</span></h6>
+                                        <h6 class="angle-round">Price volatility of Litecoin surged, suggesting market instability and risk.<span class="number">Price Volatility</span></h6>
                                         <div class="progress progress-cls">
                                           <div class="progress-bar has-gradient-to-right-bottom" style="width:15.00% !important;">15 Scores</div>
                                         </div>
@@ -941,8 +943,8 @@
                                 <div class="col-xs-12">
                                     <div class="transfer-wraper">
                                         <div class="form-group no-mb">
-                                            <label class="form-label">Select the cryptocurrency</label>
-                                            <span class="desc">minimum value "0.001 BTC"</span>
+                                            <label class="form-label" style="display: block; margin-bottom: 0px;">Select the order that requires insurance</label>
+                                            <span class="desc" style="display: block; margin: 0; padding: 0; font-size: 12px;">Order value: 2725 USDT</span>
 
                                             <div class="input-group mb-10">
                                                 <span class="input-group-addon">$</span>
@@ -961,8 +963,8 @@
 
                                             </div>
 
-                                            <label class="form-label">Choose payment method</label>
-                                            <span class="desc">minimum value "0.001 BTC"</span>
+                                            <label class="form-label" style="display: block; margin-bottom: 0px;">Choose insurance method</label>
+                                            <span class="desc" style="display: block; margin: 0; padding: 0; font-size: 12px;">BTI value: 0.00000000204 USDT</span>
 
                                             <div class="input-group mb-10">
                                                 <span class="input-group-addon">$</span>
@@ -981,7 +983,39 @@
 
                                             </div>
 
-                                            <label class="form-label">Wallet address</label>
+                                            <label class="form-label" style="display: block; margin-bottom: 0px;">Policy amount</label>
+                                            <span class="desc" id="minimumValue" style="display: block; margin: 0; padding: 0; font-size: 12px;">Value: 0.000 USDT</span>
+
+                                            <div class="input-group mb-10">
+                                                <span class="input-group-addon">
+                                                    <span class="arrow"></span>
+                                                    <img src="../data/icons/wallet-o.png" alt="icon">    
+                                                </span>
+                                                <input type="text" id="inputAmount" class="form-control" placeholder="Input Amount Here" oninput="multiplyInput()">
+                                            </div>
+
+                                            <script>
+                                                function multiplyInput() {
+                                                    var inputVal = document.getElementById('inputAmount').value;
+                                                    var factor = 0.00000000204; // Change this factor as needed
+                                                    var result = inputVal * factor;
+                                                    document.getElementById('minimumValue').innerText = 'Value: ' + result.toFixed(3) + ' USDT';
+
+                                                    // Check if the input value is a number and not empty
+                                                    if (!isNaN(inputVal) && inputVal !== '') {
+                                                        var inputValue = parseFloat(inputVal);
+
+                                                        // Update the modal content based on the input value
+                                                        if (inputValue < 30000000000) {
+                                                            document.getElementById('modalMessage').innerText = 'The maximum compensation that can be paid is 285.32 USDT';
+                                                        } else {
+                                                            document.getElementById('modalMessage').innerText = 'The maximum compensation that can be paid is 2465.32 USDT';
+                                                        }
+                                                    }
+                                                }
+                                            </script>
+
+                                            <label class="form-label">Payment address</label>
                                             <span class="desc"></span>
 
                                             <div class="input-group mb-10">
@@ -989,21 +1023,42 @@
                                                     <span class="arrow"></span>
                                                     <img src="../data/icons/wallet-o.png" alt="icon">    
                                                 </span>
-                                                <input type="text" class="form-control" placeholder="Input Amount Here">
+                                                <input type="text" class="form-control" placeholder="Input payment address here">
                                             </div>
 
-                                            <label class="form-label">Wallet address</label>
-                                            <span class="desc"></span>
+                                            <button type="button" class="btn btn-primary btn-lg mt-20 has-gradient-to-right-bottom" data-toggle="modal" href="#cmpltadminModal-1" style="width:100%">Submit</button>
+                                            <!-- modal start -->
+                                            <div class="modal fade col-xs-12" id="cmpltadminModal-1" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                            <h4 class="modal-title">Modal Title</h4>
+                                                        </div>
+                                                        <div class="modal-body" id="modalMessage">
 
-                                            <div class="input-group mb-10">
-                                                <span class="input-group-addon">
-                                                    <span class="arrow"></span>
-                                                    <img src="../data/icons/wallet-o.png" alt="icon">    
-                                                </span>
-                                                <input type="text" class="form-control" placeholder="Input Wallet Address Here">
+                                                            Please input value and submit!
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button data-dismiss="modal" class="btn btn-default" type="button">Decline</button>
+                                                            <button data-dismiss="modal" class="btn btn-success" type="button" id="acceptButton">Accept</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
+                                            <!-- modal end -->
 
-                                            <button type="button" class="btn btn-primary btn-lg mt-20 has-gradient-to-right-bottom" style="width:100%">Buy Cryptocurrency</button>
+                                            <script>
+                                                var acceptButton = document.getElementById('acceptButton');
+                                                acceptButton.addEventListener('click', function() {
+                                                    $('#cmpltadminModal-1').on('hidden.bs.modal', function () {
+                                                        showSuccess('Your order has been insured successfully');
+                                                    });
+                                                    // Remove the event listener after it has been triggered
+                                                    acceptButton.removeEventListener('click', arguments.callee);
+                                                });
+                                            </script>
                                         </div>
                                         
                                     </div>
@@ -1234,22 +1289,19 @@
 
 
     <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
-
-    <script src="../assets/plugins/jvectormap/jquery-jvectormap-2.0.1.min.js"></script>
-    <script src="../assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
     <script src="../assets/plugins/echarts/echarts-custom-for-dashboard.js"></script>
 
     <script src="../assets/plugins/flot-chart/jquery.flot.js"></script>
     <script src="../assets/plugins/flot-chart/jquery.flot.time.js"></script>
     <script src="../assets/js/chart-flot.js"></script>
 
-    <!-- HighCharts -->
-    <script src="../assets/plugins/ico/highcharts.js"></script>
-    <script src="../assets/plugins/ico/create-highcarts.js"></script>
-
     <script src="../assets/plugins/morris-chart/js/raphael-min.js"></script>
     <script src="../assets/plugins/morris-chart/js/morris.min.js"></script>
     <script src="../assets/js/chart-morris.js"></script>
+    
+    <script src="../assets/js/messenger.js"></script>
+    <script src="../assets/plugins/messenger/js/messenger.min.js"></script>
+    <script src="../assets/plugins/messenger/js/messenger-theme-future.js"></script>
     <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
 
 
