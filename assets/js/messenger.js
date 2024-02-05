@@ -39,6 +39,6 @@ function progressMessage() {
 function showSuccess(msg) {
     Messenger({
         extraClasses: 'messenger-fixed messenger-on-right messenger-on-top',
-        theme: 'flat'
+        theme: 'block'
     }).post(msg);
 }
