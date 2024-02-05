@@ -237,6 +237,22 @@
   content: "\E036";
 }
 
+.cc.BTI-alt::before {
+  content: "\f132"; /* Unicode for Font Awesome shield icon */
+  font-family: 'FontAwesome'; /* Ensure Font Awesome is the font family */
+  position: relative;
+  top: 6px; /* Small downward adjustment */
+  left: 10px; /* Small rightward adjustment */
+}
+
+.cc.BTI::before {
+  content: "\f132"; /* Unicode for Font Awesome shield icon */
+  font-family: 'FontAwesome'; /* Ensure Font Awesome is the font family */
+  position: relative;
+  top: 1px; /* Small downward adjustment */
+  left: 2px; /* Small rightward adjustment */
+}
+
 .cc.DASH::before {
   content: "\E037";
 }
