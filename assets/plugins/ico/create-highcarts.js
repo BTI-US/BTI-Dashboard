@@ -44,14 +44,14 @@ Highcharts.chart('container', {
         }
     },                   
     series: [{
-        name: 'Brands',
+        name: 'Compensation',
         data: [
-            { name: '0.7 $', y: 12 },
-            { name: '0.9 $', y: 15 },
-            { name: '0.95 $', y: 16 },
-            { name: '1.05 $', y: 17 },
-            { name: '1.10 $', y: 19 },
-            { name: '1.20 $', y: 21 }
+            { name: '$674.25', y: 59.58 },
+            { name: '$132.72', y: 11.73 },
+            { name: '$25.17', y: 2.22 },
+            { name: '$38.44', y: 3.40 },
+            { name: '$174.12', y: 15.38 },
+            { name: '$87.06', y: 7.69 }
             
         ]
     }]
