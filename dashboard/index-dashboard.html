@@ -45,6 +45,42 @@
     <link href="../assets/css/responsive.css" rel="stylesheet" type="text/css" />
     <!-- CORE CSS TEMPLATE - END -->
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var rows = document.querySelectorAll('#tech-companies-1 .data-row');
+            var riskInfo = document.querySelector('#risk-info .risk-heading');
+            var riskContent = document.querySelector('#risk-info .risk-content');
+
+            rows.forEach(function(row) {
+                row.addEventListener('click', function() {
+                    // Remove the highlight from all rows
+                    rows.forEach(r => r.classList.remove('highlighted'));
+
+                    // Add the highlight to the clicked row
+                    this.classList.add('highlighted');
+
+                    // Toggle the visibility of "RISK: HIGH"
+                    riskInfo.textContent = 'RISK: HIGH';
+                    riskInfo.style.color = 'red'; // Directly add the red color style to the riskInfo element
+                    riskContent.innerHTML = '<i class="fa fa-dot-circle-o active"></i>6 active risks';
+                });
+            });
+
+            // Add click event listener to the document
+            document.addEventListener('click', function(event) {
+                // Check if the clicked element is not a descendant of a 'data-row'
+                if (!event.target.closest('.data-row')) {
+                    // Remove the highlight from all rows
+                    rows.forEach(r => r.classList.remove('highlighted'));
+
+                    // Hide "RISK: HIGH"
+                    riskInfo.textContent = 'RISK: UNKNOWN';
+                    riskInfo.style.color = 'grey'; // Directly add the red color style to the riskInfo element
+                    riskContent.innerHTML = '<i class="fa fa-dot-circle-o active"></i>Unknown active risks';
+                }
+            });
+        });
+    </script>
 </head>
 <!-- END HEAD -->
 
@@ -395,6 +431,12 @@
                         </a>
                     </li>
                     <li class="">
+                        <a href="my-wallet.html">
+                            <i class="img"><img src="../data/icons/wallet-o.png" style="width:16px" alt=""></i>
+                            <span class="title">My Wallet</span>
+                        </a>
+                    </li>
+                    <li class="">
                         <a href="security.html">
                             <i class="fa fa-lock"></i>
                             <span class="title">Security</span>
@@ -568,9 +610,9 @@
                                 </div>
                                 <div class="col-xs-12">
                                     <div class="statistics-wraper">
-                                        <div class="statistics-info">
-                                            <h3 style="color: red;" class="mb">RISK: HIGH</h3>
-                                            <span><i class="fa fa-dot-circle-o active"></i> 6 active risks</span>
+                                        <div class="statistics-info" id="risk-info">
+                                            <h3 style="color: grey;" class="mb risk-heading">RISK: UNKNOWN</h3>
+                                            <span class="risk-content"><i class="fa fa-dot-circle-o active"></i>Unknown active risks</span>
                                         </div>
                                         <div class="statistics-info no-pb">
                                             <div style="display: flex; justify-content: center; align-items: center;">
@@ -714,31 +756,6 @@
 
                                             </tbody>
                                         </table>
-
-                                        <script>
-                                            document.addEventListener('DOMContentLoaded', function() {
-                                                var rows = document.querySelectorAll('#tech-companies-1 .data-row');
-
-                                                rows.forEach(function(row) {
-                                                    row.addEventListener('click', function() {
-                                                        // Remove the highlight from all rows
-                                                        rows.forEach(r => r.classList.remove('highlighted'));
-
-                                                        // Add the highlight to the clicked row
-                                                        this.classList.add('highlighted');
-                                                    });
-                                                });
-
-                                                // Add click event listener to the document
-                                                document.addEventListener('click', function(event) {
-                                                    // Check if the clicked element is not a descendant of a 'data-row'
-                                                    if (!event.target.closest('.data-row')) {
-                                                        // Remove the highlight from all rows
-                                                        rows.forEach(r => r.classList.remove('highlighted'));
-                                                    }
-                                                });
-                                            });
-                                        </script>
 
                                     </div>
 

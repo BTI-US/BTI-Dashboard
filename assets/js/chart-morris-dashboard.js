@@ -86,6 +86,15 @@ jQuery(function($) {
         CRYPTONIA_SETTINGS.chartMorris(percentage, coinType);
     });
 
+    // Handle click events on the entire document
+    $(document).on('click', function(event) {
+        // Check if the click event target is not inside a .data-row
+        if (!$(event.target).closest('.data-row').length) {
+            // Restore the percentage to 100 and coin type to "Unknown"
+            CRYPTONIA_SETTINGS.chartMorris(0, 'Unknown');
+        }
+    });
+
     /******************************
      initialize respective scripts 
      *****************************/
