@@ -671,7 +671,7 @@
                                                     <span class="arrow"></span>
                                                     <img src="../data/icons/wallet-o.png" alt="icon">    
                                                 </span>
-                                                <input type="text" id="inputAmount" class="form-control" placeholder="Input Amount Here" oninput="multiplyInput()">
+                                                <input type="text" id="inputAmount" class="form-control" placeholder="Input amount here" oninput="multiplyInput()">
                                             </div>
 
                                             <script>
@@ -695,7 +695,7 @@
                                                 }
                                             </script>
 
-                                            <label class="form-label">Payment address</label>
+                                            <label class="form-label">Compensation address</label>
                                             <span class="desc"></span>
 
                                             <div class="input-group mb-10">
@@ -703,7 +703,10 @@
                                                     <span class="arrow"></span>
                                                     <img src="../data/icons/wallet-o.png" alt="icon">    
                                                 </span>
-                                                <input type="text" class="form-control" placeholder="Input payment address here">
+                                                <input type="text" class="form-control" placeholder="0xB0198a14AB89a0cDcc5C746AD4226865771a8dac">
+                                                <span class="input-group-addon">
+                                                    <img src="../data/icons/copy.png" alt="icon">  
+                                                </span>
                                             </div>
 
                                             <button type="button" class="btn btn-primary btn-lg mt-20 has-gradient-to-right-bottom" data-toggle="modal" href="#cmpltadminModal-1" style="width:100%">Submit</button>
@@ -733,7 +736,7 @@
                                                 var acceptButton = document.getElementById('acceptButton');
                                                 acceptButton.addEventListener('click', function() {
                                                     $('#cmpltadminModal-1').on('hidden.bs.modal', function () {
-                                                        showSuccess('Your order has been insured successfully');
+                                                        showSuccess('Your application has been successfully submitted');
                                                     });
                                                     // Remove the event listener after it has been triggered
                                                     acceptButton.removeEventListener('click', arguments.callee);
